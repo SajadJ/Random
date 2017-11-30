@@ -28,7 +28,7 @@ lines = dataread('file', FileName, '%s', 'delimiter', '\n');
 % check to see if data if from gprmax2D gprmax3d or exported from reflex
 line1 = char(reshape(strsplit(sprintf(lines{1},' '),' '),[],3));
 
-if line1(1,1:10) == '#GprMax2D,'  %gprMax2D file
+if line1(1,1:10) == '#GprMax2D,' | line1(1,1:10) == '#gprMax2D,'  %gprMax2D file
     % find number of traces 
     nx = 7;   % line number in *.sca file
     nx = reshape(str2double(strsplit(sprintf(lines{nx},' '),' ')),[],4); nx = nx (4); 
